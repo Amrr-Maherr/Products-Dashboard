@@ -94,6 +94,7 @@ function Products() {
                   >
                     <th>#</th>
                     <th>Title</th>
+                    <th>Description</th>
                     <th>Price</th>
                     <th>Operations</th>
                   </motion.tr>
@@ -109,6 +110,7 @@ function Products() {
                     >
                       <td>{product.id}</td>
                       <td>{product.title}</td>
+                      <td>{product.description.slice(0,20)}...</td>
                       <td>{product.price}</td>
                       <td>
                         <motion.button
