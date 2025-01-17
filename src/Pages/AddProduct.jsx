@@ -1,5 +1,3 @@
-import React from "react";
-
 function AddProduct() {
   return (
     <div className="container mt-5">

@@ -10,6 +10,7 @@ import Products from "./Pages/Products";
 import Categories from "./Pages/Categories";
 import AddProduct from "./Pages/AddProduct";
 import "../src/App.css"
+import ProductDetails from "./Pages/ProductDetails";
 function App() {
   return (
     <Router>
@@ -24,7 +25,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />}/>
-                  <Route path="/add-product" element={<AddProduct />} />
+                <Route path="/add-product" element={<AddProduct />} />
+                <Route path="/Product-Detail/:id" element={<ProductDetails/>} />
                 <Route path="/categories" element={<Categories />} />
               </Routes>
             </div>

@@ -121,6 +121,7 @@ function Products() {
                           Delete
                         </motion.button>
                         <motion.button
+                        onClick={()=>{Navigate(`/Product-Detail/${product.id}`);}}
                           className="btn btn-info mx-2"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
