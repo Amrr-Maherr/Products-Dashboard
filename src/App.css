@@ -1,3 +1,6 @@
+body {
+    overflow-x: hidden;
+}
 .loader {
     border: 6px solid #f3f3f3;
     /* لون الخلفية */
