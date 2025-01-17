@@ -13,7 +13,6 @@ function Products() {
       .get("https://dummyjson.com/products")
       .then((response) => {
         setProducts(response.data.products);
-        console.log(response.data.products);
         setLoading(false);
       })
       .catch((error) => {
@@ -21,6 +20,18 @@ function Products() {
         setLoading(true);
       });
   }, []);
+   const HandelDeleteProduct = (id) => {
+     axios
+       .delete(`https://dummyjson.com/products/${id}`)
+       .then((response) => {
+         console.log(response); 
+         alert("Product deleted successfully!");
+       })
+       .catch((error) => {
+         console.log(error);
+       });
+   };
+
 
   return (
     <>
@@ -113,7 +124,8 @@ function Products() {
                       <td>{product.description.slice(0,20)}...</td>
                       <td>{product.price}</td>
                       <td>
-                        <motion.button
+                              <motion.button
+                                  onClick={()=>{HandelDeleteProduct(product.id)}}
                           className="btn btn-danger"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
