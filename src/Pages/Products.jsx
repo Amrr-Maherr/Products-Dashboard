@@ -197,6 +197,9 @@ function Products() {
                             View
                           </motion.button>
                           <motion.button
+                            onClick={() => {
+                              Navigate(`/edit-product/${product.id}`);
+                            }}
                             className="btn btn-primary"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}

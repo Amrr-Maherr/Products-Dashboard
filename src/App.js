@@ -11,6 +11,7 @@ import Categories from "./Pages/Categories";
 import AddProduct from "./Pages/AddProduct";
 import "../src/App.css"
 import ProductDetails from "./Pages/ProductDetails";
+import EditProduct from "./Pages/EditProduct";
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/add-product" element={<AddProduct />} />
                 <Route path="/Product-Detail/:id" element={<ProductDetails/>} />
                 <Route path="/categories" element={<Categories />} />
+                <Route path="/edit-product/:id" element={<EditProduct/>} />
               </Routes>
             </div>
           </div>
