@@ -34,11 +34,6 @@ function Products() {
         setProducts(updatedProducts);
       })
       .catch((error) => {
-        if (error.response && error.response.status === 404) {
-          alert("Product not found, it may have already been deleted.");
-        } else {
-          alert("Failed to delete the product. Please try again.");
-        }
         console.log(error);
       });
   };
