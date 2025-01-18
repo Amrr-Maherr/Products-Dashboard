@@ -1560,147 +1560,152 @@
         "https://cdn.dummyjson.com/products/images/groceries/Honey%20Jar/1.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Honey%20Jar/thumbnail.png"
-    },
-    {
-      "id": "e36e",
-      "title": "Fish Steak",
-      "description": "Quality fish steak, suitable for grilling, baking, or pan-searing",
-      "price": "14",
-      "category": "groceries",
-      "images": [
-        "https://cdn.dummyjson.com/products/images/groceries/Fish%20Steak/1.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Fish%20Steak/thumbnail.png",
-      "stock": 99,
-      "warrantyInformation": "1 year warranty",
-      "shippingInformation": "Ships in 1 month",
-      "returnPolicy": "30 days return policy",
-      "meta": {
-        "createdAt": "2025-01-18T10:14:15.357Z",
-        "updatedAt": "2025-01-18T10:14:15.357Z"
-      }
     }
   ],
   "categories": [
     {
       "slug": "beauty",
       "name": "Beauty",
-      "url": "https://dummyjson.com/products/category/beauty"
+      "url": "https://dummyjson.com/products/category/beauty",
+      "id": "03fa"
     },
     {
       "slug": "fragrances",
       "name": "Fragrances",
-      "url": "https://dummyjson.com/products/category/fragrances"
+      "url": "https://dummyjson.com/products/category/fragrances",
+      "id": "86a4"
     },
     {
       "slug": "furniture",
       "name": "Furniture",
-      "url": "https://dummyjson.com/products/category/furniture"
+      "url": "https://dummyjson.com/products/category/furniture",
+      "id": "2034"
     },
     {
       "slug": "groceries",
       "name": "Groceries",
-      "url": "https://dummyjson.com/products/category/groceries"
+      "url": "https://dummyjson.com/products/category/groceries",
+      "id": "bb8c"
     },
     {
       "slug": "home-decoration",
       "name": "Home Decoration",
-      "url": "https://dummyjson.com/products/category/home-decoration"
+      "url": "https://dummyjson.com/products/category/home-decoration",
+      "id": "07d0"
     },
     {
       "slug": "kitchen-accessories",
       "name": "Kitchen Accessories",
-      "url": "https://dummyjson.com/products/category/kitchen-accessories"
+      "url": "https://dummyjson.com/products/category/kitchen-accessories",
+      "id": "516b"
     },
     {
       "slug": "laptops",
       "name": "Laptops",
-      "url": "https://dummyjson.com/products/category/laptops"
+      "url": "https://dummyjson.com/products/category/laptops",
+      "id": "afe5"
     },
     {
       "slug": "mens-shirts",
       "name": "Mens Shirts",
-      "url": "https://dummyjson.com/products/category/mens-shirts"
+      "url": "https://dummyjson.com/products/category/mens-shirts",
+      "id": "37fa"
     },
     {
       "slug": "mens-shoes",
       "name": "Mens Shoes",
-      "url": "https://dummyjson.com/products/category/mens-shoes"
+      "url": "https://dummyjson.com/products/category/mens-shoes",
+      "id": "f4b5"
     },
     {
       "slug": "mens-watches",
       "name": "Mens Watches",
-      "url": "https://dummyjson.com/products/category/mens-watches"
+      "url": "https://dummyjson.com/products/category/mens-watches",
+      "id": "4517"
     },
     {
       "slug": "mobile-accessories",
       "name": "Mobile Accessories",
-      "url": "https://dummyjson.com/products/category/mobile-accessories"
+      "url": "https://dummyjson.com/products/category/mobile-accessories",
+      "id": "5246"
     },
     {
       "slug": "motorcycle",
       "name": "Motorcycle",
-      "url": "https://dummyjson.com/products/category/motorcycle"
+      "url": "https://dummyjson.com/products/category/motorcycle",
+      "id": "170e"
     },
     {
       "slug": "skin-care",
       "name": "Skin Care",
-      "url": "https://dummyjson.com/products/category/skin-care"
+      "url": "https://dummyjson.com/products/category/skin-care",
+      "id": "362f"
     },
     {
       "slug": "smartphones",
       "name": "Smartphones",
-      "url": "https://dummyjson.com/products/category/smartphones"
+      "url": "https://dummyjson.com/products/category/smartphones",
+      "id": "6c01"
     },
     {
       "slug": "sports-accessories",
       "name": "Sports Accessories",
-      "url": "https://dummyjson.com/products/category/sports-accessories"
+      "url": "https://dummyjson.com/products/category/sports-accessories",
+      "id": "541b"
     },
     {
       "slug": "sunglasses",
       "name": "Sunglasses",
-      "url": "https://dummyjson.com/products/category/sunglasses"
+      "url": "https://dummyjson.com/products/category/sunglasses",
+      "id": "6996"
     },
     {
       "slug": "tablets",
       "name": "Tablets",
-      "url": "https://dummyjson.com/products/category/tablets"
+      "url": "https://dummyjson.com/products/category/tablets",
+      "id": "309f"
     },
     {
       "slug": "tops",
       "name": "Tops",
-      "url": "https://dummyjson.com/products/category/tops"
+      "url": "https://dummyjson.com/products/category/tops",
+      "id": "30e7"
     },
     {
       "slug": "vehicle",
       "name": "Vehicle",
-      "url": "https://dummyjson.com/products/category/vehicle"
+      "url": "https://dummyjson.com/products/category/vehicle",
+      "id": "e2bd"
     },
     {
       "slug": "womens-bags",
       "name": "Womens Bags",
-      "url": "https://dummyjson.com/products/category/womens-bags"
+      "url": "https://dummyjson.com/products/category/womens-bags",
+      "id": "207c"
     },
     {
       "slug": "womens-dresses",
       "name": "Womens Dresses",
-      "url": "https://dummyjson.com/products/category/womens-dresses"
+      "url": "https://dummyjson.com/products/category/womens-dresses",
+      "id": "f75c"
     },
     {
       "slug": "womens-jewellery",
       "name": "Womens Jewellery",
-      "url": "https://dummyjson.com/products/category/womens-jewellery"
+      "url": "https://dummyjson.com/products/category/womens-jewellery",
+      "id": "534b"
     },
     {
       "slug": "womens-shoes",
       "name": "Womens Shoes",
-      "url": "https://dummyjson.com/products/category/womens-shoes"
+      "url": "https://dummyjson.com/products/category/womens-shoes",
+      "id": "2299"
     },
     {
       "slug": "womens-watches",
       "name": "Womens Watches",
-      "url": "https://dummyjson.com/products/category/womens-watches"
+      "url": "https://dummyjson.com/products/category/womens-watches",
+      "id": "af4a"
     }
   ],
   "total": 194,

@@ -35,7 +35,7 @@ function Products() {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5002/products/${productId}`)
+          .delete(`http://localhost:5003/products/${productId}`)
           .then((response) => {
             console.log(response);
             Swal.fire("Deleted!", "The product has been deleted.", "success");

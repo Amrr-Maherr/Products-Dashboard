@@ -48,7 +48,7 @@ function AddProduct() {
       };
 
       axios
-        .post("http://localhost:5002/products", ProductData)
+        .post("http://localhost:5003/products", ProductData)
         .then((response) => {
           console.log(response);
           Swal.fire({
@@ -59,7 +59,7 @@ function AddProduct() {
           });
           setTimeout(() => {
             Navigate("/products");
-          },1000)
+          }, 1000);
         })
         .catch((error) => {
           Swal.fire({
