@@ -53,7 +53,7 @@ function Categories() {
           >
             <thead>
               <tr>
-                <th scope="col">ID</th>
+                <th scope="col">#</th>
                 <th scope="col">Category Name</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Description</th>
