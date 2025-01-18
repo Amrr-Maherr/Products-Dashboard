@@ -20,12 +20,10 @@ function Categories() {
         setLoading(true);
       });
   }, []);
-
   // تصفية الفئات بناءً على قيمة البحث
   const filteredCategories = categories.filter((category) =>
     category.name.toLowerCase().includes(searchValue.toLowerCase())
   );
-
   return (
     <>
       <h1 className="my-4">Categories</h1>

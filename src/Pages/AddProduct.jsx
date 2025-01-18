@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion"; // استيراد framer-motion
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,18 @@ function AddProduct() {
   const [productCategory, setProductCategory] = useState("");
   const [productImage, setProductImage] = useState("");
   const [productThumbnail, setProductThumbnail] = useState("");
-
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5003/categories")
+      .then((response) => {
+        console.log(response.data);
+        setCategories(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      }, []);
+})
   const AddProduct = (event) => {
     event.preventDefault();
 
@@ -135,10 +146,11 @@ function AddProduct() {
             onChange={(event) => setProductCategory(event.target.value)}
           >
             <option>Select category</option>
-            <option value="groceries">Groceries</option>
-            <option value="electronics">Electronics</option>
-            <option value="clothing">Clothing</option>
-            <option value="furniture">Furniture</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.slug}>
+                {category.slug}
+              </option>
+            ))}
           </select>
         </div>
 
