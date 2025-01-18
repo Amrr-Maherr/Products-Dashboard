@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
   const Navigate = useNavigate();
 
   useEffect(() => {
@@ -20,21 +21,31 @@ function Products() {
         setLoading(true);
       });
   }, []);
-const handleDeleteProduct = (productId) => {
-  axios
-    .delete(`http://localhost:5002/products/${productId}`)
-    .then((response) => {
-      console.log(response);
-      alert("Product deleted successfully!");
-      const updatedProducts = products.filter(
-        (product) => product.id !== productId
-      );
-      setProducts(updatedProducts);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+
+  const handleDeleteProduct = (productId) => {
+    axios
+      .delete(`http://localhost:5002/products/${productId}`)
+      .then((response) => {
+        console.log(response);
+        alert("Product deleted successfully!");
+        const updatedProducts = products.filter(
+          (product) => product.id !== productId
+        );
+        setProducts(updatedProducts);
+      })
+      .catch((error) => {
+        if (error.response && error.response.status === 404) {
+          alert("Product not found, it may have already been deleted.");
+        } else {
+          alert("Failed to delete the product. Please try again.");
+        }
+        console.log(error);
+      });
+  };
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   return (
     <>
@@ -46,6 +57,18 @@ const handleDeleteProduct = (productId) => {
       >
         Products
       </motion.h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <input
+              type="search"
+              className="form-control mb-3"
+              placeholder="Search by title"
+              onChange={(event) => setSearchValue(event.target.value)}
+            />
+          </div>
+        </div>
+      </div>
       <motion.div
         className="container"
         initial={{ opacity: 0 }}
@@ -114,63 +137,59 @@ const handleDeleteProduct = (productId) => {
                   </motion.tr>
                 </thead>
                 <tbody>
-                  {products.length === 0 ? (
-                    <>
-                      <tr>
-                        <td colSpan="5" className="text-center">
-                          No products available
-                        </td>
-                      </tr>
-                    </>
+                  {filteredProducts.length === 0 ? (
+                    <tr>
+                      <td colSpan="5" className="text-center">
+                        No products available
+                      </td>
+                    </tr>
                   ) : (
-                    <>
-                      {products.map((product) => (
-                        <motion.tr
-                          key={product.id}
-                          whileHover={{
-                            scale: 1.02,
-                            backgroundColor: "#f8f9fa",
-                          }}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          <td>{product.id}</td>
-                          <td>{product.title}</td>
-                          <td>{product.description.slice(0, 20)}...</td>
-                          <td>{product.price}</td>
-                          <td>
-                            <motion.button
-                              onClick={() => {
-                                handleDeleteProduct(product.id);
-                              }}
-                              className="btn btn-danger"
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              Delete
-                            </motion.button>
-                            <motion.button
-                              onClick={() => {
-                                Navigate(`/Product-Detail/${product.id}`);
-                              }}
-                              className="btn btn-info mx-2"
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              View
-                            </motion.button>
-                            <motion.button
-                              className="btn btn-primary"
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              Edit
-                            </motion.button>
-                          </td>
-                        </motion.tr>
-                      ))}
-                    </>
+                    filteredProducts.map((product) => (
+                      <motion.tr
+                        key={product.id}
+                        whileHover={{
+                          scale: 1.02,
+                          backgroundColor: "#f8f9fa",
+                        }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <td>{product.id}</td>
+                        <td>{product.title}</td>
+                        <td>{product.description.slice(0, 20)}...</td>
+                        <td>{product.price}</td>
+                        <td>
+                          <motion.button
+                            onClick={() => {
+                              handleDeleteProduct(product.id);
+                            }}
+                            className="btn btn-danger"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            Delete
+                          </motion.button>
+                          <motion.button
+                            onClick={() => {
+                              Navigate(`/Product-Detail/${product.id}`);
+                            }}
+                            className="btn btn-info mx-2"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            View
+                          </motion.button>
+                          <motion.button
+                            className="btn btn-primary"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            Edit
+                          </motion.button>
+                        </td>
+                      </motion.tr>
+                    ))
                   )}
                 </tbody>
               </motion.table>
