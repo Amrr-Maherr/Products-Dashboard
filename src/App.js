@@ -27,13 +27,16 @@ function App() {
             <div className="col-10">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login/>} />
-                <Route path="/register" element={<Register/>} />
-                <Route path="/products" element={<Products />}/>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Register />} />
+                <Route path="/products" element={<Products />} />
                 <Route path="/add-product" element={<AddProduct />} />
-                <Route path="/Product-Detail/:id" element={<ProductDetails/>} />
+                <Route
+                  path="/Product-Detail/:id"
+                  element={<ProductDetails />}
+                />
                 <Route path="/categories" element={<Categories />} />
-                <Route path="/edit-product/:id" element={<EditProduct/>} />
+                <Route path="/edit-product/:id" element={<EditProduct />} />
               </Routes>
             </div>
           </div>
