@@ -10,14 +10,14 @@ function ProductDetails() {
   useEffect(() => {
     setLoading(true); // تعيين التحميل إلى true عند بدء التحميل
     axios
-      .get(`https://dummyjson.com/products/${id}`)
+      .get(`http://localhost:5002/products/${id}`)
       .then((response) => {
         setProduct(response.data);
         setLoading(false);
       })
       .catch((error) => {
-          console.log(error);
-          setLoading(true)
+        console.log(error);
+        setLoading(true);
       });
   }, [id]);
 
