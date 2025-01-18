@@ -57,6 +57,7 @@ function Categories() {
                 <th scope="col">Category Name</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Description</th>
+                <th>Operations</th>
               </tr>
             </thead>
             <tbody>
@@ -90,6 +91,10 @@ function Categories() {
                           {category.url}
                         </a>
                       </td>
+                      <th>
+                        <button className="btn btn-danger mx-2">Delete</button>
+                        <button className="btn btn-primary">Edit</button>
+                      </th>
                     </motion.tr>
                   ))}
                 </>
