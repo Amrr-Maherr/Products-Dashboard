@@ -10,9 +10,10 @@ function Products() {
 
   useEffect(() => {
     axios
-      .get("https://dummyjson.com/products")
+      .get("http://localhost:5000/products")
       .then((response) => {
-        setProducts(response.data.products);
+        console.log(response.data);
+        setProducts(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -20,18 +21,22 @@ function Products() {
         setLoading(true);
       });
   }, []);
-   const HandelDeleteProduct = (id) => {
-     axios
-       .delete(`https://dummyjson.com/products/${id}`)
-       .then((response) => {
-         console.log(response); 
-         alert("Product deleted successfully!");
-       })
-       .catch((error) => {
-         console.log(error);
-       });
-   };
-
+const handleDeleteProduct = (productId) => {
+  axios
+    .delete(`http://localhost:5000/products/${productId}`)
+    .then((response) => {
+      console.log(response);
+      alert("Product deleted successfully!" + response.data.message);
+      const updatedProducts = products.filter(
+        (product) => product.id !== productId
+      );
+      setProducts(updatedProducts);
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Failed to delete the product. Please try again.");
+    });
+};
 
   return (
     <>
@@ -125,7 +130,7 @@ function Products() {
                       <td>{product.price}</td>
                       <td>
                               <motion.button
-                                  onClick={()=>{HandelDeleteProduct(product.id)}}
+                                  onClick={()=>{handleDeleteProduct(product.id);}}
                           className="btn btn-danger"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
