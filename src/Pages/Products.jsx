@@ -24,20 +24,40 @@ function Products() {
   }, []);
 
   const handleDeleteProduct = (productId) => {
-    axios
-      .delete(`http://localhost:5002/products/${productId}`)
-      .then((response) => {
-        console.log(response);
-        alert("Product deleted successfully!");
-        const updatedProducts = products.filter(
-          (product) => product.id !== productId
-        );
-        setProducts(updatedProducts);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    Swal.fire({
+      title: "Are you sure you want to delete this product?",
+      text: "This action cannot be undone.",
+      icon: "warning",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      denyButtonText: `No, keep it`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`http://localhost:5002/products/${productId}`)
+          .then((response) => {
+            console.log(response);
+            Swal.fire("Deleted!", "The product has been deleted.", "success");
+            const updatedProducts = products.filter(
+              (product) => product.id !== productId
+            );
+            setProducts(updatedProducts);
+          })
+          .catch((error) => {
+            console.log(error);
+            Swal.fire(
+              "Error",
+              "There was an issue deleting the product.",
+              "error"
+            );
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Product not deleted", "The product is safe.", "info");
+      }
+    });
   };
+
 
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchValue.toLowerCase())
