@@ -42,9 +42,9 @@ function Categories() {
           </div>
         </div>
 
-        <div className="col-12">
+        <div className="col-12 table-responsive-sm">
           <motion.table
-            className="table table-bordered"
+            className="table table table-hover table-sm"
             initial={{ opacity: 0 }} // بدء الحركة بالشفافية 0
             animate={{ opacity: 1 }} // الانتقال إلى الشفافية 1
             transition={{ duration: 1 }} // مدة الحركة
@@ -90,8 +90,10 @@ function Categories() {
                         </a>
                       </td>
                       <th>
-                        <button className="btn btn-danger mx-2">Delete</button>
-                        <button className="btn btn-primary">Edit</button>
+                        <button className="btn btn-danger mx-2 btn-sm">
+                          Delete
+                        </button>
+                        <button className="btn btn-primary btn-sm">Edit</button>
                       </th>
                     </motion.tr>
                   ))}
