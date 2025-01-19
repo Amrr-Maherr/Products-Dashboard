@@ -38,7 +38,7 @@ function Categories() {
             />
           </div>
           <div className="col-12 my-4">
-            <button className="btn btn-success">Add New Product</button>
+            <button className="btn btn-success">Add New Category</button>
           </div>
         </div>
 
