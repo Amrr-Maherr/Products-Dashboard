@@ -12,8 +12,6 @@ import AddProduct from "./Pages/AddProduct";
 import "../src/App.css"
 import ProductDetails from "./Pages/ProductDetails";
 import EditProduct from "./Pages/EditProduct";
-import Login from "./Pages/Login";
-import Register from "./Pages/Register";
 function App() {
   return (
     <Router>
@@ -27,8 +25,6 @@ function App() {
             <div className="col-10">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Register />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/add-product" element={<AddProduct />} />
                 <Route

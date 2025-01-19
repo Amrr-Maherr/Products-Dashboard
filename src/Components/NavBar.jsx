@@ -8,14 +8,6 @@ function NavBar() {
           <Link className="navbar-brand me-auto" to="/">
             Home
           </Link>
-          <div className="ms-auto">
-            <Link className="btn btn-outline-primary me-2" to="/login">
-              Login
-            </Link>
-            <Link className="btn btn-outline-success" to="/signup">
-              Sign Up
-            </Link>
-          </div>
         </div>
       </nav>
     </>
