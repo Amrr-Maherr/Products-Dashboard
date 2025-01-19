@@ -134,7 +134,7 @@ function Products() {
               </div>
             ) : (
               <motion.table
-                className="table table-hover"
+                className="table table-hover table-sm"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
@@ -180,7 +180,7 @@ function Products() {
                             onClick={() => {
                               handleDeleteProduct(product.id);
                             }}
-                            className="btn btn-danger"
+                            className="btn btn-danger btn-sm"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                           >
@@ -190,7 +190,7 @@ function Products() {
                             onClick={() => {
                               Navigate(`/Product-Detail/${product.id}`);
                             }}
-                            className="btn btn-info mx-2"
+                            className="btn btn-info mx-2  btn-sm"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                           >
@@ -200,7 +200,7 @@ function Products() {
                             onClick={() => {
                               Navigate(`/edit-product/${product.id}`);
                             }}
-                            className="btn btn-primary"
+                            className="btn btn-primary  btn-sm"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                           >
