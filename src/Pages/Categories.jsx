@@ -26,7 +26,14 @@ function Categories() {
   );
   return (
     <>
-      <h1 className="my-4">Categories</h1>
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="my-4"
+      >
+        Categories
+      </motion.h1>
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -38,7 +45,13 @@ function Categories() {
             />
           </div>
           <div className="col-12 my-4">
-            <button className="btn btn-success">Add New Category</button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-success"
+            >
+              Add New Category
+            </motion.button>
           </div>
         </div>
 
