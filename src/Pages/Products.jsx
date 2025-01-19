@@ -190,7 +190,7 @@ function Products() {
                             onClick={() => {
                               Navigate(`/Product-Detail/${product.id}`);
                             }}
-                            className="btn btn-info mx-2  btn-sm"
+                            className="btn btn-info mx-2 my-2  btn-sm"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                           >
