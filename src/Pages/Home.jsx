@@ -10,16 +10,16 @@ function Home() {
   useEffect(() => {
     // جلب البيانات من API لحساب إجمالي المنتجات والفئات
     axios
-      .get("http://localhost:5003/products")
+      .get("https://dummyjson.com/products")
       .then((response) => {
-        setTotalProducts(response.data.length); // تعديل حسب API المنتج
+        setTotalProducts(response.data.total);
       })
       .catch((error) => {
         console.log("Error fetching products", error);
       });
 
     axios
-      .get("http://localhost:5003/categories")
+      .get("https://dummyjson.com/products/categories")
       .then((response) => {
         setTotalCategories(response.data.length); // تعديل حسب API الفئات
       })
