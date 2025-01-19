@@ -9,7 +9,7 @@ function Categories() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5003/categories")
+      .get("https://dummyjson.com/products/categories")
       .then((response) => {
         console.log(response.data);
         setCategories(response.data);

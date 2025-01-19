@@ -10,7 +10,7 @@ function ProductDetails() {
   useEffect(() => {
     setLoading(true); // تعيين التحميل إلى true عند بدء التحميل
     axios
-      .get(`http://localhost:5003/products/${id}`)
+      .get(`https://dummyjson.com/products/${id}`)
       .then((response) => {
         setProduct(response.data);
         setLoading(false);

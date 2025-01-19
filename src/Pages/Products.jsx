@@ -12,9 +12,9 @@ function Products() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5002/products")
+      .get("https://dummyjson.com/products")
       .then((response) => {
-        setProducts(response.data);
+        setProducts(response.data.products);
         setLoading(false);
       })
       .catch((error) => {
@@ -35,7 +35,7 @@ function Products() {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5003/products/${productId}`)
+          .delete(`https://dummyjson.com/products/${productId}`)
           .then((response) => {
             console.log(response);
             Swal.fire("Deleted!", "The product has been deleted.", "success");
