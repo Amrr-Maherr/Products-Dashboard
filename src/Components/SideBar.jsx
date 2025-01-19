@@ -8,7 +8,7 @@ function SideBar() {
       <ul className="nav flex-column">
         {/* تأثير hover وتنسيق الحركة */}
         <motion.li
-          whileHover={{ scale: 1.1, backgroundColor: "#f0f0f0" }}
+          whileHover={{ scale: 1.1}}
           whileTap={{ scale: 0.95 }}
           className="nav-item"
           initial={{ opacity: 0, x: -100 }}
@@ -21,8 +21,8 @@ function SideBar() {
         </motion.li>
         <motion.li
           className="nav-item my-3"
-          whileHover={{ scale: 1.1, backgroundColor: "#f0f0f0" }}
-          whileTap={{ scale: 0.95 }} // تقليص الحجم عند النقر
+          whileHover={{ scale: 1.1}}
+          whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
