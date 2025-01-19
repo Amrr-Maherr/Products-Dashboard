@@ -71,7 +71,7 @@ function EditProduct() {
       };
 
       axios
-        .put(`http://localhost:5002/products/${id}`, updatedProduct)
+        .put(`https://dummyjson.com/products/${id}`, updatedProduct)
         .then((response) => {
           console.log(response);
           Swal.fire({

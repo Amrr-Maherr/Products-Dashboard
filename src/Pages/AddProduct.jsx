@@ -15,7 +15,7 @@ function AddProduct() {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5003/categories")
+      .get("https://dummyjson.com/products/categories")
       .then((response) => {
         console.log(response.data);
         setCategories(response.data);
@@ -59,7 +59,7 @@ function AddProduct() {
       };
 
       axios
-        .post("http://localhost:5003/products", ProductData)
+        .post("https://dummyjson.com/products/add", ProductData)
         .then((response) => {
           console.log(response);
           Swal.fire({
