@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";
-import Categories from "./Pages/Categories";
 import AddProduct from "./Pages/AddProduct";
 import ProductDetails from "./Pages/ProductDetails";
 import EditProduct from "./Pages/EditProduct";
@@ -87,14 +86,6 @@ function App() {
           element={
             <MainLayout>
               <ProductDetails />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/categories"
-          element={
-            <MainLayout>
-              <Categories />
             </MainLayout>
           }
         />
