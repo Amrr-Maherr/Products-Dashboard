@@ -97,7 +97,7 @@ function EditProduct() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container-fluid mt-5">
       <h2>Edit Product</h2>
       <form onSubmit={handleEditProduct}>
         <div className="mb-3">

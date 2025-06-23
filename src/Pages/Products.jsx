@@ -73,7 +73,7 @@ function Products() {
       >
         Products
       </motion.h1>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12">
             <input
@@ -86,7 +86,7 @@ function Products() {
         </div>
       </div>
       <motion.div
-        className="container"
+        className="container-fluid"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
