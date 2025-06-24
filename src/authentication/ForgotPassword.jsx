@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const ForgotPassword = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
+    console.log("Reset password requested for:", email);
   };
 
   return (
@@ -25,7 +24,7 @@ const Login = () => {
       {/* Right Side - Form */}
       <div className="col-md-6 d-flex align-items-center justify-content-center bg-light">
         <div className="w-75">
-          <h2 className="text-center mb-4">Login</h2>
+          <h2 className="text-center mb-4">Reset Password</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
@@ -41,33 +40,20 @@ const Login = () => {
                 placeholder="Enter your email"
               />
             </div>
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                placeholder="Enter your password"
-              />
-            </div>
             <button type="submit" className="btn btn-primary w-100 mb-3">
-              Login
+              Send Reset Link
             </button>
             <div className="text-center">
+              <p>
+                Already have an account?{" "}
+                <Link to="/login" className="text-primary">
+                  Login
+                </Link>
+              </p>
               <p>
                 Don't have an account?{" "}
                 <Link to="/register" className="text-primary">
                   Register
-                </Link>
-              </p>
-              <p>
-                <Link to="/forgot-password" className="text-primary">
-                  Forgot Password?
                 </Link>
               </p>
             </div>
@@ -78,4 +64,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;

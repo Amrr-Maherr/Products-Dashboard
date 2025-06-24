@@ -23,7 +23,7 @@ function ProductDetails() {
 
 
   return (
-    <div className="container-fluid mt-5">
+    <div className="container-fluid">
       {loading ? (
         <>
           <div className="loader">

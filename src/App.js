@@ -12,6 +12,8 @@ import EditProduct from "./Pages/EditProduct";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
 import "./App.css";
+import ForgotPassword from "./authentication/ForgotPassword";
+import ResetPassword from "./authentication/ResetPassword";
 
 function App() {
   // Layout for authenticated pages (with NavBar and SideBar)
@@ -32,7 +34,7 @@ function App() {
   // Layout for authentication pages (without NavBar and SideBar)
   const AuthLayout = ({ children }) => (
     <div className="App">
-      <div className="container mt-5">{children}</div>
+      <div className="container-fluid p-0 m-0">{children}</div>
     </div>
   );
 
@@ -53,6 +55,22 @@ function App() {
           element={
             <AuthLayout>
               <Register />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/forgot-password"
+          element={
+            <AuthLayout>
+              <ForgotPassword />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/reset"
+          element={
+            <AuthLayout>
+              <ResetPassword />
             </AuthLayout>
           }
         />

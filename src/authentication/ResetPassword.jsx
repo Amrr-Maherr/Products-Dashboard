@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const ResetPassword = () => {
+  const [formData, setFormData] = useState({
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
+    console.log("Password reset requested:", formData);
   };
 
   return (
@@ -25,49 +31,52 @@ const Login = () => {
       {/* Right Side - Form */}
       <div className="col-md-6 d-flex align-items-center justify-content-center bg-light">
         <div className="w-75">
-          <h2 className="text-center mb-4">Login</h2>
+          <h2 className="text-center mb-4">Reset Password</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                placeholder="Enter your email"
-              />
-            </div>
-            <div className="mb-3">
               <label htmlFor="password" className="form-label">
-                Password
+                New Password
               </label>
               <input
                 type="password"
                 className="form-control"
                 id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
                 required
-                placeholder="Enter your password"
+                placeholder="Enter new password"
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="confirmPassword" className="form-label">
+                Confirm New Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+                placeholder="Confirm new password"
               />
             </div>
             <button type="submit" className="btn btn-primary w-100 mb-3">
-              Login
+              Reset Password
             </button>
             <div className="text-center">
+              <p>
+                Already have an account?{" "}
+                <Link to="/login" className="text-primary">
+                  Login
+                </Link>
+              </p>
               <p>
                 Don't have an account?{" "}
                 <Link to="/register" className="text-primary">
                   Register
-                </Link>
-              </p>
-              <p>
-                <Link to="/forgot-password" className="text-primary">
-                  Forgot Password?
                 </Link>
               </p>
             </div>
@@ -78,4 +87,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ResetPassword;
