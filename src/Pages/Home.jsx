@@ -1,47 +1,29 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { motion } from "framer-motion"; // استيراد framer-motion
+import { motion } from "framer-motion";
 
 function Home() {
-  const [totalProducts, setTotalProducts] = useState(0);
-  const [totalCategories, setTotalCategories] = useState(0);
-  const [loading, setLoading] = useState(true);
+  // بيانات وهمية للتجربة
+  const totalProducts = 48;
+  const totalUsers = 12;
 
-  useEffect(() => {
-    // جلب البيانات من API لحساب إجمالي المنتجات والفئات
-    axios
-      .get("https://dummyjson.com/products")
-      .then((response) => {
-        setTotalProducts(response.data.total);
-      })
-      .catch((error) => {
-        console.log("Error fetching products", error);
-      });
-
-    axios
-      .get("https://dummyjson.com/products/categories")
-      .then((response) => {
-        setTotalCategories(response.data.length); // تعديل حسب API الفئات
-      })
-      .catch((error) => {
-        console.log("Error fetching categories", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  const topSellingProducts = [
+    { id: 1, title: "iPhone 13", price: 999, sold: 350 },
+    { id: 2, title: "Samsung Galaxy S22", price: 899, sold: 300 },
+    { id: 3, title: "MacBook Air M2", price: 1200, sold: 270 },
+    { id: 4, title: "Sony Headphones", price: 199, sold: 250 },
+    { id: 5, title: "Smart Watch", price: 150, sold: 200 },
+  ];
 
   return (
     <>
       <h1 className="my-4">Admin Dashboard</h1>
-      <div className="container mt-4 vh-100">
+      <div className="container-fluid mt-4">
         <div className="row">
-          {/* Total Products Card with Animation */}
+          {/* Total Products Card */}
           <motion.div
             className="col-md-6"
-            initial={{ opacity: 0, x: -100 }} // بداية الحركة
-            animate={{ opacity: 1, x: 0 }} // حركة النهاية
-            transition={{ duration: 0.5 }} // مدة الحركة
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="card text-white bg-info mb-4">
               <div className="card-body">
@@ -51,41 +33,59 @@ function Home() {
             </div>
           </motion.div>
 
-          {/* Total Categories Card with Animation */}
+          {/* Total Users Card */}
           <motion.div
             className="col-md-6"
-            initial={{ opacity: 0, x: 100 }} // بداية الحركة
-            animate={{ opacity: 1, x: 0 }} // حركة النهاية
-            transition={{ duration: 0.5 }} // مدة الحركة
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="card text-white bg-success mb-4">
               <div className="card-body">
-                <h5 className="card-title">Total Categories</h5>
-                <p className="card-text">{totalCategories} Categories</p>
+                <h5 className="card-title">Total Users</h5>
+                <p className="card-text">{totalUsers} Users</p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Statistics Card with Animation */}
-        <div className="row">
-          <motion.div
-            className="col-md-12"
-            initial={{ opacity: 0, y: 100 }} // بداية الحركة
-            animate={{ opacity: 1, y: 0 }} // حركة النهاية
-            transition={{ duration: 0.5 }} // مدة الحركة
-          >
-            <div className="card text-white bg-dark">
-              <div className="card-body">
-                <h5 className="card-title">Additional Statistics</h5>
-                <p className="card-text">
-                  More detailed statistics can go here, such as product
-                  categories, most popular products, etc.
-                </p>
+        {/* Table: Top Selling Products */}
+        <motion.div
+          className="row"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="col-12">
+            <div className="card shadow-sm">
+              <div className="card-header bg-dark text-white">
+                Top 5 Best Selling Products
+              </div>
+              <div className="card-body table-responsive">
+                <table className="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Product</th>
+                      <th>Price ($)</th>
+                      <th>Units Sold</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {topSellingProducts.map((product, index) => (
+                      <tr key={product.id}>
+                        <td>{index + 1}</td>
+                        <td>{product.title}</td>
+                        <td>{product.price}</td>
+                        <td>{product.sold}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </>
   );

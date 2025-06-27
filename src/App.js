@@ -45,7 +45,7 @@ function App() {
       <Routes>
         {/* Auth routes with AuthLayout */}
         <Route
-          path="/login"
+          path="/"
           element={
             <AuthLayout>
               <Login />
@@ -78,7 +78,7 @@ function App() {
         />
         {/* Main routes with MainLayout */}
         <Route
-          path="/"
+          path="/Home"
           element={
             <MainLayout>
               <Home />
