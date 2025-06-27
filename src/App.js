@@ -14,6 +14,8 @@ import Register from "./authentication/Register";
 import "./App.css";
 import ForgotPassword from "./authentication/ForgotPassword";
 import ResetPassword from "./authentication/ResetPassword";
+import AllUsers from "./Pages/AllUsers";
+import Settings from "./Pages/Settings";
 
 function App() {
   // Layout for authenticated pages (with NavBar and SideBar)
@@ -92,10 +94,26 @@ function App() {
           }
         />
         <Route
+          path="/settings"
+          element={
+            <MainLayout>
+              <Settings />
+            </MainLayout>
+          }
+        />
+        <Route
           path="/add-product"
           element={
             <MainLayout>
               <AddProduct />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/all-users"
+          element={
+            <MainLayout>
+              <AllUsers />
             </MainLayout>
           }
         />

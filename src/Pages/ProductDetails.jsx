@@ -24,13 +24,13 @@ function ProductDetails() {
 
   return (
     <div className="container-fluid">
-      {loading ? (
+      {/* {loading ? (
         <>
           <div className="loader">
             <div className="spinner"></div>
           </div>
         </>
-      ) : (
+      ) : ( */}
         <>
           <div className="row">
             <div className="col-12">
@@ -162,7 +162,7 @@ function ProductDetails() {
             </div>
           </div>
         </>
-      )}
+      {/* )} */}
     </div>
   );
 }

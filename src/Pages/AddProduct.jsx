@@ -86,7 +86,7 @@ function AddProduct() {
 
   return (
     <motion.div
-      className="container"
+      className="container-fluid my-3"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }} // إضافة تأثير fade-in عند تحميل الصفحة

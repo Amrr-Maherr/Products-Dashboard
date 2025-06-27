@@ -6,14 +6,19 @@ function NavBar() {
       <div className="container-fluid d-flex align-items-center justify-content-between">
         {/* لوجو */}
         <Link className="navbar-brand fw-bold text-primary" to="/">
-          title
+          Buy&Box
         </Link>
 
         {/* رابط الصفحة الرئيسية */}
         <div className="d-none d-lg-block">
-          <Link className="nav-link text-dark fw-semibold" to="/">
-            Home
-          </Link>
+          <button className="btn btn-primary">
+            <a
+              className="nav-link text-white fw-semibold"
+              href="https://web-monster-e-commerce.vercel.app"
+            >
+              WebSite
+            </a>
+          </button>
         </div>
 
         {/* زر تسجيل الخروج */}
