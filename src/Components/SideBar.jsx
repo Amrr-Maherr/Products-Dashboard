@@ -30,7 +30,7 @@ function SideBar() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
-          <Link to="/products/add" className="nav-link text-dark">
+          <Link to="/add-product" className="nav-link text-dark">
             <i className="fas fa-plus me-2"></i>
             Add Product
           </Link>

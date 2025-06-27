@@ -13,17 +13,6 @@ function AddProduct() {
   const [productImage, setProductImage] = useState("");
   const [productThumbnail, setProductThumbnail] = useState("");
   const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://dummyjson.com/products/categories")
-      .then((response) => {
-        console.log(response.data);
-        setCategories(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      }, []);
-})
   const AddProduct = (event) => {
     event.preventDefault();
 
@@ -134,26 +123,6 @@ function AddProduct() {
             onChange={(event) => setProductPrice(event.target.value)}
           />
         </div>
-
-        <div className="mb-3">
-          <label htmlFor="productCategory" className="form-label">
-            Product Category
-          </label>
-          <select
-            className="form-select"
-            id="productCategory"
-            value={productCategory}
-            onChange={(event) => setProductCategory(event.target.value)}
-          >
-            <option>Select category</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.slug}>
-                {category.slug}
-              </option>
-            ))}
-          </select>
-        </div>
-
         <div className="mb-3">
           <label htmlFor="productImage" className="form-label">
             Product Image URL
