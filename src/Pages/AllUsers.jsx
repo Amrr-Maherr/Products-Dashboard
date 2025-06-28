@@ -8,7 +8,7 @@ export default function AllUsers() {
   const [searchValue, setSearchValue] = useState("");
 
   const [users, setUsers] = useState([
-    { id: 1, name: "Amr Maher", email: "amr@example.com" },
+    { id: 1, name: "Hady Elsayad", email: "hady@example.com" },
     { id: 2, name: "Salma Ali", email: "salma@example.com" },
     { id: 3, name: "Mohamed Tarek", email: "mohamed@example.com" },
     { id: 4, name: "Sara Ahmed", email: "sara@example.com" },
